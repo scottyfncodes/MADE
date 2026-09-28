@@ -2,7 +2,7 @@ import { getCategory } from '../data/categories'
 import type { Project } from '../data/types'
 import { h } from '../lib/dom'
 import { hrefFor } from '../lib/router'
-import { launchButton, projectIcon, statusBadge } from './primitives'
+import { launchButton, projectIcon, projectStyle, statusBadge } from './primitives'
 
 /**
  * Project card. The whole card links to the detail view via a stretched
@@ -18,7 +18,7 @@ export function projectCard(project: Project, index = 0): HTMLElement {
     'article',
     {
       class: `card${muted ? ' card--muted' : ''}`,
-      style: `--project-accent:${project.art.accent};--i:${index}`,
+      style: projectStyle(project, `;--i:${index}`),
       'data-slug': project.slug,
       'aria-labelledby': titleId,
     },

@@ -53,6 +53,16 @@ describe('home view', () => {
     }
   })
 
+  it('passes a project text color through to its card when set', () => {
+    const view = viewFor({ kind: 'home', filter: 'all' })
+    for (const p of PROJECTS) {
+      const style = view.querySelector(`.card[data-slug="${p.slug}"]`)?.getAttribute('style') ?? ''
+      expect(style).toContain(`--project-accent:${p.art.accent}`)
+      if (p.art.ink) expect(style).toContain(`--project-ink:${p.art.ink}`)
+      else expect(style).not.toContain('--project-ink')
+    }
+  })
+
   it('links every card to its detail route', () => {
     const view = viewFor({ kind: 'home', filter: 'all' })
     for (const p of PROJECTS) {

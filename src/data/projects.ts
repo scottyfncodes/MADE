@@ -191,6 +191,33 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-27',
   },
   {
+    name: 'SNOWNOW',
+    slug: 'snownow',
+    tagline: 'Find your best mountain day. Snow, weather, lifts and traffic in one call.',
+    description:
+      'A decision engine for ski days. It weighs snow, weather, lift status, road conditions and drive time, then gives one call: where to go, when to leave, when the snow is best and when to head home. Every number says whether it is live or not.',
+    category: 'apps',
+    url: 'https://snownow.vercel.app',
+    repo: 'https://github.com/scottyfncodes/SNOWNOW',
+    art: { icon: 'art/snownow.webp', accent: '#7ce7ff', ink: '#04060a' },
+    tags: ['Skiing', 'Weather', 'Traffic', 'PWA'],
+    status: 'live',
+    dateAdded: '2026-09-28',
+  },
+  {
+    name: 'CO Trail Atlas',
+    slug: 'co-trail-atlas',
+    tagline: 'A field atlas of 47 hand-picked Colorado trails.',
+    description:
+      'A map of hand-picked Colorado trails with drive times, trailhead forecasts and your own hiking log. Installable and built for use at the trailhead.',
+    category: 'apps',
+    url: 'https://co-trails-atlas.vercel.app',
+    art: { icon: 'art/co-trail-atlas.webp', accent: '#3f7a52' },
+    tags: ['Hiking', 'Colorado', 'Maps', 'PWA'],
+    status: 'live',
+    dateAdded: '2026-09-28',
+  },
+  {
     name: 'CADDAIE',
     slug: 'caddaie',
     tagline: 'The AI golf caddie. The club, the number and the reason, in one glance.',

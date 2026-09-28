@@ -2,7 +2,7 @@ import { getCategory } from '../data/categories'
 import type { Project } from '../data/types'
 import { asset, h } from '../lib/dom'
 import { hrefFor } from '../lib/router'
-import { launchButton, projectIcon, statusBadge } from './primitives'
+import { launchButton, projectIcon, projectStyle, statusBadge } from './primitives'
 
 export function featuredCard(project: Project): HTMLElement {
   const category = getCategory(project.category)
@@ -35,5 +35,5 @@ export function featuredCard(project: Project): HTMLElement {
     ),
   )
 
-  return h('article', { class: 'featured', style: `--project-accent:${project.art.accent}`, 'data-slug': project.slug }, art, body)
+  return h('article', { class: 'featured', style: projectStyle(project), 'data-slug': project.slug }, art, body)
 }
