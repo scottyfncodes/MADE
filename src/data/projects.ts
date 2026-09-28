@@ -34,11 +34,10 @@ export const PROJECTS: readonly Project[] = [
     description:
       'Breed chickens with a real Mendelian genetics engine: dozens of trait loci, 71 real breeds, procedurally drawn birds, hatch reveals, chicken shows, hatchery upgrades and ancestry trees. Installable and playable offline.',
     category: 'games',
-    url: 'https://scottyfncodes.github.io/FOWL-PLAY/',
     repo: 'https://github.com/scottyfncodes/FOWL-PLAY',
     art: { icon: 'art/fowl-play.webp', accent: '#d98b2b' },
     tags: ['Genetics', 'Breeding', 'Discovery', 'PWA'],
-    status: 'live',
+    status: 'in-development',
     dateAdded: '2026-09-26',
   },
   {
@@ -62,11 +61,10 @@ export const PROJECTS: readonly Project[] = [
     description:
       'Pick a target, buy what you can afford to know, hire a crew, then play six stages where each one tests a different attribute. Failures make the night worse instead of ending it.',
     category: 'games',
-    url: 'https://scottyfncodes.github.io/big-score/',
     repo: 'https://github.com/scottyfncodes/big-score',
     art: { icon: 'art/big-score.webp', accent: '#b8862b' },
     tags: ['Heist', 'Strategy', 'Turn-based'],
-    status: 'live',
+    status: 'in-development',
     dateAdded: '2026-09-24',
   },
   {
