@@ -76,11 +76,10 @@ export const PROJECTS: readonly Project[] = [
     description:
       'A 3D skate-and-stealth game set in a fully surveilled suburb. Learn to see and evade the town’s prediction system, investigate a false positive involving a friend, and reach one of five endings.',
     category: 'games',
-    url: 'https://scottyfncodes.github.io/SAFEtrace/',
     repo: 'https://github.com/scottyfncodes/SAFEtrace',
     art: { icon: 'art/safetrace.webp', accent: '#3b82f6' },
     tags: ['Skateboarding', 'Stealth', 'Narrative', '3D'],
-    status: 'live',
+    status: 'in-development',
     dateAdded: '2026-09-26',
   },
   {
@@ -90,11 +89,10 @@ export const PROJECTS: readonly Project[] = [
     description:
       'A first-person physics sandbox. Build contraptions from junk parts on a workbench and test them against real problems, like getting a ball back over the fence. The physics judges only the outcome.',
     category: 'games',
-    url: 'https://scottyfncodes.github.io/BACKYARD-LAB/',
     repo: 'https://github.com/scottyfncodes/BACKYARD-LAB',
     art: { icon: 'art/backyard-lab.webp', accent: '#ff8a1a' },
     tags: ['Physics', 'Sandbox', '3D', 'Kids'],
-    status: 'live',
+    status: 'in-development',
     dateAdded: '2026-09-27',
   },
   {
@@ -174,26 +172,11 @@ export const PROJECTS: readonly Project[] = [
     description:
       'A fantasy-baseball league companion: keeper history and costs, trades, offers, DPUD bets, draft-color cycles and league history, with commissioner tools and Yahoo sync.',
     category: 'apps',
-    url: 'https://antlerboard.vercel.app',
     repo: 'https://github.com/scottyfncodes/Antlerboard',
     art: { icon: 'art/antlerboard.webp', accent: '#c9a15a' },
     tags: ['Fantasy baseball', 'League tools'],
-    status: 'live',
+    status: 'in-development',
     dateAdded: '2026-09-23',
-  },
-  {
-    name: 'Greenlight',
-    slug: 'greenlight',
-    tagline: 'Find the best cannabis flower deal in Denver today.',
-    description:
-      'Ranks Denver flower deals by real out-the-door value for your preferences, including first-time offers and stacking rules, and explains every pick with freshness and source badges. It refuses to show invented data.',
-    category: 'apps',
-    url: 'https://scottyfncodes.github.io/GREENLIGHT/',
-    repo: 'https://github.com/scottyfncodes/GREENLIGHT',
-    art: { icon: 'art/greenlight.webp', accent: '#2fbf71' },
-    tags: ['Deals', 'Denver', 'PWA'],
-    status: 'live',
-    dateAdded: '2026-09-27',
   },
   {
     name: 'Leaf Hunter',
