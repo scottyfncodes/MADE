@@ -69,7 +69,7 @@ describe('project catalog', () => {
   it('includes the initial collection', () => {
     const expected = [
       'made', 'foxtail', 'demo-day', 'rideout', 'tread', 'aerobook', 'crew', 'safetrace', 'unearth',
-      'route-rabbit', 'antlerboard', 'greenlight', 'leaf-hunter', 'caddaie', 'sos', 'big-score',
+      'route-rabbit', 'antlerboard', 'leaf-hunter', 'caddaie', 'sos', 'big-score',
       'fowl-play', 'backyard-lab',
     ]
     const slugs = new Set(PROJECTS.map((p) => p.slug))

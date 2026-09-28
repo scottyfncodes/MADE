@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { mount, titleFor, viewFor } from '../app'
 import { PROJECTS } from '../data/projects'
 import { CATEGORIES } from '../data/categories'
+import { STATUS_LABEL } from '../lib/catalog'
 
 function root(): HTMLElement {
   document.body.innerHTML = '<div id="app"></div>'
@@ -47,7 +48,7 @@ describe('home view', () => {
         expect(launch?.getAttribute('rel')).toContain('noopener')
       } else {
         expect(launch, p.name).toBeNull()
-        expect(card.querySelector('.btn--disabled')?.textContent).toContain('Coming soon')
+        expect(card.querySelector('.btn--disabled')?.textContent).toContain(STATUS_LABEL[p.status])
       }
     }
   })
