@@ -330,6 +330,20 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-28',
   },
   {
+    name: 'Bruh',
+    slug: 'bruh',
+    tagline: 'Fling your limbs at a climbing wall. Stick it, or blunder spectacularly.',
+    description:
+      'Slingshot four limbs, one at a time, up fourteen handcrafted routes from V0 to V7. Pull a limb back and let go; the rest of the body has to deal with the consequences, right down to Bernie, the climber technically cooperating with all of it. Honest physics, no clock, and a pump bar that punishes bad throws.',
+    category: 'games',
+    url: 'https://scottyfncodes.github.io/Boulder/',
+    repo: 'https://github.com/scottyfncodes/Boulder',
+    art: { icon: 'art/bruh.webp', accent: '#2fa9a5' },
+    tags: ['Climbing', 'Physics', 'Slingshot', 'PWA'],
+    status: 'live',
+    dateAdded: '2026-09-28',
+  },
+  {
     name: 'Demo Day',
     slug: 'demo-day',
     tagline: 'Not public yet.',
