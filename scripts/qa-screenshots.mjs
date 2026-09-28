@@ -54,6 +54,26 @@ for (const [name, viewport, deviceScaleFactor, isMobile] of viewports) {
     await context.close()
   }
 }
+// The skip link must stay off-screen until focused, including in the Home
+// Screen app where the page draws under the status bar. Chromium cannot
+// emulate env(safe-area-inset-top), so set the token directly.
+{
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })
+  const page = await context.newPage()
+  await page.goto(base, { waitUntil: 'networkidle' })
+  for (const safeTop of ['0px', '47px', '59px']) {
+    await page.evaluate((v) => document.documentElement.style.setProperty('--safe-top', v), safeTop)
+    await page.waitForTimeout(300)
+    const bottom = await page.$eval('.skip-link', (el) => el.getBoundingClientRect().bottom)
+    if (bottom > 0) errors.push(`skip link visible with safe-top ${safeTop}: bottom at ${bottom}px`)
+  }
+  await page.keyboard.press('Tab')
+  await page.waitForTimeout(300)
+  const focusedTop = await page.$eval('.skip-link', (el) => el.getBoundingClientRect().top)
+  if (focusedTop < 0) errors.push(`skip link off-screen when focused: top at ${focusedTop}px`)
+  await context.close()
+}
+
 await browser.close()
 server.close()
 if (errors.length) { console.error('Console/page errors:\n' + errors.join('\n')); process.exit(1) }
