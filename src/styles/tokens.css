@@ -1,0 +1,96 @@
+/* MADE design tokens — neutral foundation, one distinctive accent. */
+:root {
+  color-scheme: light dark;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Accent: MADE tangerine. Used for the wordmark dot, focus rings, primary actions. */
+  --accent: #ff5c2e;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(255, 92, 46, 0.14);
+
+  /* Neutral scale (dark theme by default; light overrides below). */
+  --bg: #0d0d0f;
+  --bg-elevated: #141417;
+  --surface: #1a1a1f;
+  --surface-hover: #202027;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-faint: #71717a;
+  --chip-bg: rgba(255, 255, 255, 0.06);
+  --chip-active-bg: #f4f4f5;
+  --chip-active-ink: #0d0d0f;
+  --glass: rgba(13, 13, 15, 0.72);
+
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 24px 48px -24px rgba(0, 0, 0, 0.8);
+  --shadow-icon: 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --gutter: 16px;
+  --content-max: 1200px;
+  --tap: 44px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f6f4;
+    --bg-elevated: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #fbfbfa;
+    --line: rgba(0, 0, 0, 0.08);
+    --line-strong: rgba(0, 0, 0, 0.16);
+    --text: #111113;
+    --text-muted: #5f5f66;
+    --text-faint: #8a8a93;
+    --chip-bg: rgba(0, 0, 0, 0.05);
+    --chip-active-bg: #111113;
+    --chip-active-ink: #ffffff;
+    --glass: rgba(246, 246, 244, 0.78);
+    --accent-soft: rgba(255, 92, 46, 0.12);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -20px rgba(0, 0, 0, 0.25);
+    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.05), 0 24px 48px -24px rgba(0, 0, 0, 0.3);
+    --shadow-icon: 0 8px 20px -10px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+  }
+}
