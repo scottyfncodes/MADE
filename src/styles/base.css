@@ -78,14 +78,17 @@ p {
 .skip-link {
   position: fixed;
   top: calc(var(--safe-top) + 8px);
-  left: 8px;
+  left: calc(var(--safe-left) + 8px);
   z-index: 100;
   padding: 10px 14px;
   background: var(--accent);
   color: var(--accent-ink);
   border-radius: var(--radius-pill);
   font-weight: 600;
-  transform: translateY(-200%);
+  /* Hidden until keyboard focus. Slide up by the pill's own height plus the
+     safe area plus a margin, so it clears the top edge even in the Home
+     Screen app, where the page draws under the status bar. */
+  transform: translateY(calc(-100% - var(--safe-top) - 16px));
   transition: transform var(--dur-fast) var(--ease-out);
 }
 
