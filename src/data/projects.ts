@@ -332,13 +332,15 @@ export const PROJECTS: readonly Project[] = [
   {
     name: 'Demo Day',
     slug: 'demo-day',
-    tagline: 'Not public yet.',
-    description: 'Demo Day is still being built and does not have a public version yet. It will appear here the moment it does.',
-    category: 'experiments',
+    tagline: 'Study the building, place your charges, get clear, watch it come down.',
+    description:
+      'A demolition puzzle game. Work out what is really holding each building up, place a limited set of charges, and watch a deterministic collapse play out. Then read the demolition report, collect the payout, and run the job again to beat it. Six contracts, from a garden shed to a riverside warehouse.',
+    category: 'games',
+    url: 'https://scottyfncodes.github.io/DEMO-DAY/',
     repo: 'https://github.com/scottyfncodes/DEMO-DAY',
-    art: { icon: 'art/placeholder.svg', accent: '#7c7c86' },
-    tags: ['Work in progress'],
-    status: 'coming-soon',
-    dateAdded: '2026-09-27',
+    art: { icon: 'art/demo-day.webp', accent: '#ffb020', ink: '#0d1219' },
+    tags: ['Puzzle', 'Demolition', 'Physics', 'PWA'],
+    status: 'live',
+    dateAdded: '2026-09-28',
   },
 ]
