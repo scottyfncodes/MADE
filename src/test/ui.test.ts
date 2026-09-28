@@ -21,11 +21,22 @@ describe('home view', () => {
     expect(view.querySelectorAll('.card')).toHaveLength(PROJECTS.length)
   })
 
-  it('renders one chip per category plus All, in registry order', () => {
+  it('renders All plus one chip per non-empty category, in registry order', () => {
     const view = viewFor({ kind: 'home', filter: 'all' })
     const chips = [...view.querySelectorAll('.chip')].map((c) => c.getAttribute('data-filter'))
-    expect(chips).toEqual(['all', ...CATEGORIES.map((c) => c.id)])
+    const used = CATEGORIES.filter((c) => PROJECTS.some((p) => p.category === c.id)).map((c) => c.id)
+    expect(chips).toEqual(['all', ...used])
     expect(view.querySelector('.chip[aria-current="true"]')?.getAttribute('data-filter')).toBe('all')
+  })
+
+  it('hides an empty category from the nav unless it is the active filter', () => {
+    const empty = CATEGORIES.find((c) => !PROJECTS.some((p) => p.category === c.id))
+    if (!empty) return // every category is in use; nothing to hide
+    const home = viewFor({ kind: 'home', filter: 'all' })
+    expect(home.querySelector(`.chip[data-filter="${empty.id}"]`)).toBeNull()
+    const direct = viewFor({ kind: 'home', filter: empty.id })
+    expect(direct.querySelector(`.chip[data-filter="${empty.id}"]`)?.getAttribute('aria-current')).toBe('true')
+    expect(direct.querySelector('.empty')).not.toBeNull()
   })
 
   it('filters cards by category and hides the featured block', () => {
@@ -95,10 +106,13 @@ describe('detail view', () => {
   })
 
   it('shows an honest note instead of a link for unavailable projects', () => {
-    const view = viewFor({ kind: 'project', slug: 'demo-day' })
-    expect(view.querySelector('a[data-launch]')).toBeNull()
-    expect(view.querySelector('.launchbar')).toBeNull()
-    expect(view.querySelector('.detail__note')?.textContent).toContain('Coming soon')
+    const unavailable = PROJECTS.filter((p) => p.status !== 'live')
+    for (const p of unavailable) {
+      const view = viewFor({ kind: 'project', slug: p.slug })
+      expect(view.querySelector('a[data-launch]'), p.name).toBeNull()
+      expect(view.querySelector('.launchbar'), p.name).toBeNull()
+      expect(view.querySelector('.detail__note')?.textContent, p.name).toContain(STATUS_LABEL[p.status])
+    }
   })
 
   it('renders not-found for unknown slugs', () => {

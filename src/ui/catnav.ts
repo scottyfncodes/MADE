@@ -6,9 +6,16 @@ import { hrefFor } from '../lib/router'
 /**
  * Thumb-friendly category filter. Chips are real links, so the filter is
  * shareable and works without JavaScript-driven state.
+ *
+ * Categories with no projects are left out so the nav never offers an empty
+ * shelf. A category still shows when it is the active filter (someone opened
+ * its link), and reappears on its own as soon as a project uses it.
  */
 export function categoryNav(active: Filter, counts: Record<Filter, number>): HTMLElement {
-  const entries: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES.map((c) => ({ id: c.id, label: c.label }))]
+  const entries: { id: Filter; label: string }[] = [
+    { id: 'all', label: 'All' },
+    ...CATEGORIES.filter((c) => counts[c.id] > 0 || c.id === active).map((c) => ({ id: c.id, label: c.label })),
+  ]
   const list = h(
     'div',
     { class: 'catnav__scroll', role: 'list' },
