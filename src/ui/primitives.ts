@@ -4,6 +4,12 @@ import { STATUS_LABEL, isLaunchable, isSelf } from '../lib/catalog'
 import { asset, h, svg } from '../lib/dom'
 import { GLYPH_ARROW_UP_RIGHT, GLYPH_CLOCK, GLYPH_PLAY } from './glyphs'
 
+/** Inline CSS custom properties carrying a project's own colors. */
+export function projectStyle(project: Project, extra = ''): string {
+  const ink = project.art.ink ? `;--project-ink:${project.art.ink}` : ''
+  return `--project-accent:${project.art.accent}${ink}${extra}`
+}
+
 /** Square project icon with the project's accent as its backdrop. */
 export function projectIcon(project: Project, sizeHint: number): HTMLElement {
   const img = h('img', {

@@ -4,7 +4,7 @@ import { STATUS_LABEL, isLaunchable } from '../lib/catalog'
 import { asset, h, svg } from '../lib/dom'
 import { hrefFor } from '../lib/router'
 import { GLYPH_CHEVRON_LEFT, GLYPH_GITHUB } from './glyphs'
-import { launchButton, projectIcon, statusBadge } from './primitives'
+import { launchButton, projectIcon, projectStyle, statusBadge } from './primitives'
 
 export function projectDetail(project: Project, backTo: string): HTMLElement {
   const category = getCategory(project.category)
@@ -55,7 +55,7 @@ export function projectDetail(project: Project, backTo: string): HTMLElement {
 
   const view = h(
     'section',
-    { class: 'container detail', style: `--project-accent:${project.art.accent}` },
+    { class: 'container detail', style: projectStyle(project) },
     h('a', { class: 'detail__back', href: backTo }, svg(GLYPH_CHEVRON_LEFT, 'btn__icon'), 'All things'),
     hero,
     body,
@@ -64,7 +64,7 @@ export function projectDetail(project: Project, backTo: string): HTMLElement {
   const wrapper = h('div', { class: 'view' }, view)
   if (isLaunchable(project)) {
     wrapper.appendChild(
-      h('div', { class: 'launchbar', style: `--project-accent:${project.art.accent}` }, launchButton(project, { size: 'lg', labelWithName: true })),
+      h('div', { class: 'launchbar', style: projectStyle(project) }, launchButton(project, { size: 'lg', labelWithName: true })),
     )
   }
   return wrapper

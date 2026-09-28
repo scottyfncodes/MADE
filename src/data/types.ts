@@ -41,6 +41,11 @@ export interface ProjectArt {
    * own identity through this color (glow, gradient wash, focus ring).
    */
   accent: string
+  /**
+   * Optional text color used on top of `accent` (launch buttons). Set it when
+   * the accent is too light for white text, e.g. a pale cyan or yellow.
+   */
+  ink?: string
 }
 
 export interface Project {

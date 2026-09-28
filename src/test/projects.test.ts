@@ -52,6 +52,7 @@ describe('project catalog', () => {
   it('uses valid accent colors and ISO dates', () => {
     for (const p of PROJECTS) {
       expect(p.art.accent, `${p.name} accent`).toMatch(/^#[0-9a-f]{6}$/i)
+      if (p.art.ink !== undefined) expect(p.art.ink, `${p.name} ink`).toMatch(/^#[0-9a-f]{6}$/i)
       expect(p.dateAdded, `${p.name} dateAdded`).toMatch(/^\d{4}-\d{2}-\d{2}$/)
       expect(Number.isNaN(Date.parse(p.dateAdded))).toBe(false)
     }
@@ -70,7 +71,7 @@ describe('project catalog', () => {
     const expected = [
       'made', 'foxtail', 'demo-day', 'rideout', 'tread', 'aerobook', 'crew', 'safetrace', 'unearth',
       'route-rabbit', 'antlerboard', 'leaf-hunter', 'caddaie', 'sos', 'big-score',
-      'fowl-play', 'backyard-lab',
+      'fowl-play', 'backyard-lab', 'snownow', 'co-trail-atlas',
     ]
     const slugs = new Set(PROJECTS.map((p) => p.slug))
     for (const slug of expected) expect(slugs.has(slug), slug).toBe(true)
