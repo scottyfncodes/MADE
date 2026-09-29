@@ -106,12 +106,21 @@ describe('detail view', () => {
     expect(view.querySelector('.launchbar')).not.toBeNull()
   })
 
+  it('explains adding a live project to the Home Screen', () => {
+    const view = viewFor({ kind: 'project', slug: 'foxtail' })
+    const guide = view.querySelector('details.install')
+    expect(guide?.querySelector('summary')?.textContent).toBe('Add Foxtail to your Home Screen')
+    expect(guide?.textContent).toContain('Add to Home Screen')
+    expect(guide?.querySelectorAll('.install__platform')).toHaveLength(2)
+  })
+
   it('shows an honest note instead of a link for unavailable projects', () => {
     const unavailable = PROJECTS.filter((p) => p.status !== 'live')
     for (const p of unavailable) {
       const view = viewFor({ kind: 'project', slug: p.slug })
       expect(view.querySelector('a[data-launch]'), p.name).toBeNull()
       expect(view.querySelector('.launchbar'), p.name).toBeNull()
+      expect(view.querySelector('.install'), p.name).toBeNull()
       expect(view.querySelector('.detail__note')?.textContent, p.name).toContain(STATUS_LABEL[p.status])
     }
   })

@@ -4,6 +4,7 @@ import { STATUS_LABEL, isLaunchable } from '../lib/catalog'
 import { asset, h, svg } from '../lib/dom'
 import { hrefFor } from '../lib/router'
 import { GLYPH_CHEVRON_LEFT, GLYPH_GITHUB } from './glyphs'
+import { installGuide } from './install'
 import { launchButton, projectIcon, projectStyle, statusBadge } from './primitives'
 
 export function projectDetail(project: Project, backTo: string): HTMLElement {
@@ -50,6 +51,7 @@ export function projectDetail(project: Project, backTo: string): HTMLElement {
     !isLaunchable(project)
       ? h('p', { class: 'detail__note' }, `${STATUS_LABEL[project.status]}. There is no public link for ${project.name} yet, so nothing here pretends to be one.`)
       : null,
+    isLaunchable(project) ? installGuide(project) : null,
     h('div', { class: 'detail__meta' }, h('span', null, `Added ${formatDate(project.dateAdded)}`)),
   )
 
