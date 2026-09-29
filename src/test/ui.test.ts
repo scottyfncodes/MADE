@@ -150,4 +150,20 @@ describe('mount', () => {
     expect(el.querySelector('main .chip[aria-current="true"]')?.getAttribute('data-filter')).toBe('outdoors')
     unmount()
   })
+
+  it('signs the footer "MADE by Have An App" with a real link to the studio', () => {
+    const el = root()
+    const unmount = mount(el)
+    const footer = el.querySelector('footer') as HTMLElement
+    expect(footer.querySelector('.maker__lockup')?.textContent).toBe('MADEby Have An App')
+    const links = [...footer.querySelectorAll<HTMLAnchorElement>('a[href="https://haveanapp.com"]')]
+    expect(links.length).toBeGreaterThanOrEqual(1)
+    for (const a of links) {
+      expect(a.getAttribute('target')).toBe('_blank')
+      expect(a.getAttribute('rel')).toContain('noopener')
+    }
+    // The studio stays out of the header: MADE is the app.
+    expect(el.querySelector('header')?.textContent).not.toContain('Have An App')
+    unmount()
+  })
 })

@@ -49,6 +49,10 @@ npm run art        # re-render brand icons and project artwork (uses the bundled
 
 Deploys happen from `main` through `.github/workflows/deploy.yml` to GitHub Pages.
 
+## Brand
+
+MADE is made by [Have An App](https://haveanapp.com). The studio signs the footer and nowhere else. [`brand/HAVE-AN-APP.md`](brand/HAVE-AN-APP.md) records the conventions this sets for future Have An App projects.
+
 ## Stack
 
 Vite, TypeScript, plain DOM and modern CSS. No framework, no backend, no analytics. Installable as a PWA with a small network-first service worker.
