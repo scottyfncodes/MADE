@@ -98,7 +98,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Where should I ride today? Find the ride, know the ride, get out there.',
     description:
       'Ranks Colorado Front Range mountain-bike areas for a given day using the forecast, recent rain, seasonal access rules and drive time, then gives a plain verdict: send it, worth it, or skip it. Includes a map and a garage for your bike.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/RIDEOUT/',
     repo: 'https://github.com/scottyfncodes/RIDEOUT',
     art: { icon: 'art/rideout.webp', accent: '#5aa864' },
@@ -112,7 +112,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Your vehicle. Your adventure.',
     description:
       'Add your vehicle and Tread lists off-road routes, scenic drives, camping and multi-stop trips it can actually handle, comparing each route’s published requirements against your capabilities with a source on every claim.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/TREAD/',
     repo: 'https://github.com/scottyfncodes/TREAD',
     art: { icon: 'art/tread.webp', accent: '#c2652b' },
@@ -126,7 +126,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Aircraft brokerage and aviation insurance CRM.',
     description:
       'A single-user CRM for an aircraft broker who also sells aviation insurance. Contacts, tail-number-aware aircraft and policies link to opportunities and follow-ups, with FAA-style CSV import and aviation calculators. Everything stays on your device.',
-    category: 'apps',
+    category: 'commercial',
     url: 'https://aerobook-three.vercel.app',
     repo: 'https://github.com/scottyfncodes/AEROBOOK',
     art: { icon: 'art/aerobook.webp', accent: '#3b6ea8' },
@@ -140,7 +140,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'A fast, private route planner for pediatric home-health therapists.',
     description:
       'Stores patients by initials only, builds an optimized weekly or daily visit route with weather-adjusted drive times, handles mid-day cancellations and make-ups, and hands off to your maps app for navigation.',
-    category: 'apps',
+    category: 'commercial',
     url: 'https://scottyfncodes.github.io/Route-Rabbit/',
     repo: 'https://github.com/scottyfncodes/Route-Rabbit',
     art: { icon: 'art/route-rabbit.webp', accent: '#1f8a7c' },
@@ -154,7 +154,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Find the color. Chase the peak.',
     description:
       'Where Colorado fall foliage is peaking right now and whether it is worth the drive: a trailhead map, an elevation-band color forecast, time-budget picks, road-trip corridors, leaf-check reports and a watchlist.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/Leaf-Hunter/',
     repo: 'https://github.com/scottyfncodes/Leaf-Hunter',
     art: { icon: 'art/leaf-hunter.webp', accent: '#e0b23a' },
@@ -168,7 +168,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Find your best mountain day. Snow, weather, lifts and traffic in one call.',
     description:
       'A decision engine for ski days. It weighs snow, weather, lift status, road conditions and drive time, then gives one call: where to go, when to leave, when the snow is best and when to head home. Every number says whether it is live or not.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://snownow.vercel.app',
     repo: 'https://github.com/scottyfncodes/POWNOW',
     art: { icon: 'art/pownow.webp', accent: '#7ce7ff', ink: '#04060a' },
@@ -182,7 +182,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'A field atlas of 47 hand-picked Colorado trails.',
     description:
       'A map of hand-picked Colorado trails with drive times, trailhead forecasts and your own hiking log. Installable and built for use at the trailhead.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://co-trails-atlas.vercel.app',
     art: { icon: 'art/co-trail-atlas.webp', accent: '#3f7a52' },
     tags: ['Hiking', 'Colorado', 'Maps', 'PWA'],
@@ -209,7 +209,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'A 12-week bodyweight program that runs the workout for you.',
     description:
       'Eighty-four days across four progressive phases, with animated demos and form cues for every move. Tap to log sets, and a bar at the bottom runs work timers, rests and the next move. Progress is saved on your phone.',
-    category: 'apps',
+    category: 'home',
     url: 'https://scottyfncodes.github.io/calisthenics-program/',
     repo: 'https://github.com/scottyfncodes/calisthenics-program',
     art: { icon: 'art/calisthenics.webp', accent: '#f4b54a', ink: '#182420' },
@@ -223,7 +223,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'A private meal planner and grocery assistant. Your meals, your budget.',
     description:
       'Plan the week for whoever is eating, scale every recipe, subtract the pantry and get one grocery list priced by whole packages. Swap or lock meals, rate what you cook, and import old recipe cards. Everything stays in your browser.',
-    category: 'apps',
+    category: 'home',
     url: 'https://scottyfncodes.github.io/HomeCook/',
     repo: 'https://github.com/scottyfncodes/HomeCook',
     art: { icon: 'art/homecook.webp', accent: '#1f7a5a' },
@@ -237,7 +237,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'Is tonight worth going out for? A decision engine for nights under the stars.',
     description:
       'Takes the Moon, twilight, the Milky Way, planets, meteor showers, the cloud forecast, light pollution and the drive, and turns them into one call with a why: where to go, when to leave and the dark window. Colorado dark-sky sites, with a red night-vision mode.',
-    category: 'apps',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/LOOKUP/',
     repo: 'https://github.com/scottyfncodes/LOOKUP',
     art: { icon: 'art/lookup.webp', accent: '#ffd66b', ink: '#070a12' },
@@ -251,7 +251,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'A beer journal for two that grows into a landscape.',
     description:
       'Log every beer you meet with a score from each of you, notes and a photo. Styles become mountain ranges and each beer a light at the height of its score, with insights on shared taste and biggest disagreements. Everything stays on the device.',
-    category: 'apps',
+    category: 'home',
     url: 'https://scottyfncodes.github.io/BREW-LOG/',
     repo: 'https://github.com/scottyfncodes/BREW-LOG',
     art: { icon: 'art/brew-log.webp', accent: '#8a5a88' },
@@ -265,7 +265,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'The AI golf caddie. The club, the number and the reason, in one glance.',
     description:
       'Enter distance, wind, elevation, lie and trouble; an on-device engine returns the club, the swing, the plays-like yardage and where to aim. Works offline on the course, with an optional AI explanation of the pick.',
-    category: 'tools',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/CADDAIE/',
     repo: 'https://github.com/scottyfncodes/CADDAIE',
     art: { icon: 'art/caddaie.webp', accent: '#3ea36b' },
@@ -279,7 +279,7 @@ export const PROJECTS: readonly Project[] = [
     tagline: 'An offline survival guide that fits in one file.',
     description:
       'First aid with step-through guides, water, food, shelter, fire, navigation, signaling (including a screen-strobe SOS light), disasters and outages. Zero dependencies, installable, and printable as one full guide.',
-    category: 'tools',
+    category: 'outdoors',
     url: 'https://scottyfncodes.github.io/SOS/',
     repo: 'https://github.com/scottyfncodes/SOS',
     art: { icon: 'art/sos.webp', accent: '#d1a832' },

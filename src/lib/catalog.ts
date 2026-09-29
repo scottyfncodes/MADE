@@ -29,7 +29,7 @@ export function filterProjects(filter: Filter, projects: readonly Project[] = PR
 }
 
 export function countByCategory(projects: readonly Project[] = PROJECTS): Record<Filter, number> {
-  const counts: Record<Filter, number> = { all: projects.length, games: 0, apps: 0, tools: 0, experiments: 0 }
+  const counts: Record<Filter, number> = { all: projects.length, games: 0, outdoors: 0, home: 0, commercial: 0 }
   for (const p of projects) counts[p.category] += 1
   return counts
 }
