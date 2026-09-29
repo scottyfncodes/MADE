@@ -3,7 +3,7 @@
 > Have an idea for an app? **Cool. Let's make it.**
 > Have An App — small apps, made for you.
 
-This is the canonical reference, established by the MADE branding test. It lives here until the haveanapp.com site has its own repo, then moves there as `BRAND.md`.
+The canonical copy is [`BRAND.md` in scottyfncodes/haveanapp](https://github.com/scottyfncodes/haveanapp/blob/main/BRAND.md). This is MADE's copy, from the branding test that established it. When the two differ, the haveanapp copy wins.
 
 **Same family, different personalities.** Apps share a foundation and a signature. Each one keeps its own color, mark, icon and voice.
 
