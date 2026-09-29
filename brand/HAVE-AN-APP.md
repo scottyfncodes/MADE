@@ -1,66 +1,84 @@
-# Have An App — brand notes (from the MADE test)
+# Have An App — brand system
 
-MADE is the first app to carry the Have An App signature. This file records what worked, so later apps can feel related without looking the same: **same family, different personalities.**
-
-> **MADE is the app. Have An App is the maker.**
+> Have an idea for an app? **Cool. Let's make it.**
 > Have An App — small apps, made for you.
 
-## 1. Where the branding lives in MADE
+This is the canonical reference, established by the MADE branding test. It lives here until the haveanapp.com site has its own repo, then moves there as `BRAND.md`.
 
-| Place | Treatment |
+**Same family, different personalities.** Apps share a foundation and a signature. Each one keeps its own color, mark, icon and voice.
+
+## The studio
+
+- **Name:** always "Have An App", with each word capitalised. The URL is `haveanapp.com`, all lowercase.
+- **Line:** *Small apps, made for you.*
+- **Invitation:** *Have an idea? Let's make it.* Use it at most once per surface.
+- **Voice:** small, clever, useful, human. Talk to one person, in plain words. "I wish there was an app that…" is the kind of line that fits.
+- **Never say:** solutions, platform, enterprise, innovation, transformation, end-to-end, scalable, synergy. 
+
+## The mark: the tile
+
+A rounded app tile with a dot in the middle: an app, waiting for an idea.
+
+```svg
+<svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="8" r="1.8" fill="currentColor"/></svg>
+```
+
+- It is monochrome and uses `currentColor` everywhere. It never gets a brand color, so it never competes with an app's accent.
+- On a light background it's near-black; on a dark one it's off-white. As an app icon (`brand/have-an-app-mark.svg`) it's off-white on the family's dark gradient tile. In MADE, the 16px glyph is `GLYPH_TILE` in `src/ui/glyphs.ts`.
+- The wordmark is the tile followed by "Have An App" in the display font, weight 800, tracking −0.03em.
+
+## Color
+
+The studio has **no accent**; it's ink on paper. Its primary button is simply the inverted text color. The color on a Have An App page comes from the apps it shows: each family card's button and dot use that app's accent (`--app-accent`).
+
+## Shared foundation (every app copies these)
+
+The family token set is `:root` in MADE's `src/styles/tokens.css`. Copy everything except the accent block:
+
+| | |
 | --- | --- |
-| Footer | Lockup: **MADE◆ by ▢ Have An App**. "Have An App" links to https://haveanapp.com. Under it: *Small apps, made for you.* and one quiet link, *Have an idea? Let's make it ↗*. |
-| `<meta name="author">` | `Have An App` |
-| Web app manifest | Description ends with "Made by Have An App." (shows in Android's install sheet) |
-| Header, hero, icon, title, splash | **Nothing.** They stay MADE-only ("MADE …by scott", the M◆ icon). |
+| Type | System stack (SF Pro, then Inter). Display: weight 800 with tight tracking (−0.03 to −0.045em). Body: 16/1.5. Small text: 13–15px. |
+| Neutrals | `#0d0d0f` dark and `#f6f6f4` light, following the system setting. Body copy uses `--text-muted`. `--text-faint` is for decoration only, because it fails 4.5:1 in light mode. |
+| Radii | 10 / 16 / 24 / 32 / pill. Cards 24, buttons pill, icons 22%. |
+| Spacing | 4px scale. The gutter is 16px, rising to 24 at 640px and 40 at 1024px. |
+| Motion | One ease-out curve; 140/220/360ms; a 6px fade-up when content arrives; all of it off under reduced motion. |
+| Surfaces | Glass sticky header, hairline borders, soft long shadows. |
+| Buttons | Pill-shaped, 44px minimum (52 for primary). The primary button uses the accent. Pressing scales it to 0.97. |
+| Honesty | Only link things that work. Show an inert status pill for anything not live yet. Empty states are one human sentence and one way back. |
+| PWA | Safe-area insets; a `theme-color` for each scheme; a full-bleed icon plus a maskable one; network-first service worker. |
 
-The studio shows up where people look for "who made this" (the bottom of the page) and nowhere they are trying to use the app.
+## Personality (each app chooses)
 
-## 2. Signature pattern (carry forward)
+- **Accent:** one color. MADE uses tangerine `#ff5c2e`.
+- **Finish mark:** a small shape of its own. MADE's is the ◆ after its wordmark. Don't reuse another app's shape.
+- **Icon:** the app's own mark on a full-bleed tile, with **no studio logo**.
+- **Voice line:** MADE uses "…by scott". Don't copy it.
+
+## The signature (how an app credits the studio)
 
 ```
-<APP NAME>◆  by ▢ Have An App        ← app wordmark leads, studio signs
+<APP>◆  by ▢ Have An App
 Small apps, made for you. Have an idea? Let's make it ↗
 ```
 
-- The app's own wordmark is on the left, in its own accent. The studio name comes after "by", at body size.
-- **The ▢ tile mark** (`GLYPH_TILE` in `src/ui/glyphs.ts`) is Have An App's only glyph: a rounded app tile with a dot. Monochrome `currentColor`, 14px. It never gets a brand color, so it never competes with the app's accent.
-- One link to haveanapp.com on the name, plus at most one soft invitation. Never a banner, never a button, never in the header.
-- The copy stays in plain words: "small apps", "made", "let's make it".
-- The whole signature is defined once (`MAKER` in `src/ui/header.ts`), so the name, URL and line can't drift.
+- It goes in the **footer** or the About area, and nowhere else. The header, title, icon, splash and social image belong to the app.
+- The app's wordmark comes first, in its accent. The studio name follows "by" at body size, with the tile mark.
+- Use one link to https://haveanapp.com, plus at most one soft invitation.
+- Add `<meta name="author" content="Have An App">`. Where there's room, end the manifest description with "Made by Have An App."
+- MADE's reference implementation is `footer()` and `MAKER` in `src/ui/header.ts`.
 
-## 3. Shared foundation (the family)
+## Where MADE carries it
 
-These tokens in `src/styles/tokens.css` should be copied as-is into new apps:
+| Place | Treatment |
+| --- | --- |
+| Footer | The signature above, with its one link and one invitation |
+| `<meta name="author">` | `Have An App` |
+| Manifest description | Ends with "Made by Have An App." |
+| Header, hero, icon, title, splash, share image | MADE only |
 
-- **Type:** the system stack (SF Pro / Inter fallback). Display weight 800, tight tracking (−0.04em) for names and wordmarks. Body 16px/1.5. Secondary text 13–14px.
-- **Neutrals:** near-black `#0d0d0f` / warm off-white `#f6f6f4`, with dark and light themes that follow the system setting. Muted text is `--text-muted`. Use `--text-faint` only for decoration, never for text people must read (it fails 4.5:1 on light).
-- **Radii:** 10 / 16 / 24 / 32 / pill. Cards 24, buttons pill, icons ~22%.
-- **Spacing:** 4px scale; gutter of 16 → 24 → 40.
-- **Motion:** one ease-out curve, 140/220/360ms, a 6px fade-up on view change, all disabled under reduced motion.
-- **Surfaces:** a glass sticky header, hairline `--line` borders, soft long shadows instead of hard ones.
-- **Buttons:** pill-shaped, 44px minimum tap target, and the primary button carries the accent. When something isn't available, show an honest, inert status pill rather than a fake link.
-- **PWA basics:** safe-area insets throughout, `black-translucent` status bar, `theme-color` per scheme, a maskable icon with safe-zone padding, network-first service worker.
-- **Empty and not-found states:** one short human sentence and one way back ("Nothing here." / "Back to everything").
+## Don't
 
-## 4. Personality (per app, *not* shared)
-
-Each app picks its own:
-
-- **Accent color.** MADE's is tangerine `#ff5c2e`. Another app should choose a different one.
-- **Finish mark.** MADE's is the rotated-square "◆" after the wordmark and in the icon. Another app might borrow the idea of a small mark of completion, but it should draw its own shape.
-- **Icon.** It should be recognisably the app's own, full-bleed, with no studio logo on it. The studio never appears on a home-screen icon.
-- **Voice line.** MADE's "…by scott" is personal to a showroom. Other apps shouldn't copy it.
-
-## 5. Do not carry forward
-
-- Putting "Have An App" in the header, title, icon, splash or OG image. The app keeps those spaces.
-- Using the tangerine accent or the ◆ as Have An App's color or mark. Those belong to MADE.
-- MADE's category chips, featured card and grid. They are specific to a catalog.
-- More than one call to action. One quiet link is the ceiling.
-- Startup vocabulary: solutions, platform, innovation, transformation, enterprise.
-
-## 6. Open items
-
-- haveanapp.com could not be reached from the build environment during this pass, so the site's own palette and type were not compared against these notes. Check them against each other, and if the site has a real logo, compare it with the ▢ tile mark before other apps copy the tile.
-- iOS standalone mode shows the `#0d0d0f` background while the page loads. A dedicated splash (`apple-touch-startup-image`) wasn't needed; if one is added later, it should show the app only.
+- Don't put Have An App in an app's header, icon or splash, or show it as a banner.
+- Don't give the studio mark a color, or borrow an app's accent or mark for the studio.
+- Don't use more than one call to action per surface.
+- Don't list an app in the family before it's live.
