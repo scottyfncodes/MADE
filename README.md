@@ -1,6 +1,6 @@
 # MADE
 
-**Things I’ve made.**
+**…by scott**
 
 MADE is a small, static showroom for my apps, games, tools and experiments. One link, tap something, use it.
 

@@ -15,7 +15,7 @@ export function homeView(filter: Filter): HTMLElement {
     'section',
     { class: 'container intro' },
     h('h1', { class: 'intro__title' }, 'MADE', h('span', { class: 'wordmark__dot', 'aria-hidden': 'true' })),
-    h('p', { class: 'intro__sub' }, 'Things I’ve made. Tap one to open it.'),
+    h('p', { class: 'intro__sub' }, '…by scott'),
   )
 
   const gridTitle = filter === 'all' ? 'Everything' : getCategory(filter).label

@@ -6,7 +6,7 @@ import { notFound, projectDetail } from './ui/detail'
 import { footer, header } from './ui/header'
 import { homeView } from './ui/home'
 
-const SITE_TITLE = 'MADE — Things I’ve made.'
+const SITE_TITLE = 'MADE …by scott'
 
 /** Remembers the last home filter so "back" from a detail returns there. */
 let lastHomeHref = hrefFor({ kind: 'home', filter: 'all' })
