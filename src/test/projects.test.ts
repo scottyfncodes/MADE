@@ -71,7 +71,8 @@ describe('project catalog', () => {
     const expected = [
       'made', 'foxtail', 'demo-day', 'rideout', 'tread', 'aerobook', 'crew', 'safetrace', 'unearth',
       'route-rabbit', 'antlerboard', 'leaf-hunter', 'caddaie', 'sos', 'big-score',
-      'fowl-play', 'backyard-lab', 'snownow', 'co-trail-atlas', 'fart-flight', 'calisthenics', 'homecook', 'lookup', 'brew-log',
+      'fowl-play', 'backyard-lab', 'pownow', 'co-trail-atlas', 'fart-flight', 'calisthenics', 'homecook', 'lookup', 'brew-log',
+      'bruh',
     ]
     const slugs = new Set(PROJECTS.map((p) => p.slug))
     for (const slug of expected) expect(slugs.has(slug), slug).toBe(true)
