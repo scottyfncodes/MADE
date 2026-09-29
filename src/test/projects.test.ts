@@ -69,7 +69,7 @@ describe('project catalog', () => {
 
   it('includes the initial collection', () => {
     const expected = [
-      'made', 'foxtail', 'demo-day', 'rideout', 'tread', 'aerobook', 'safetrace', 'unearth',
+      'foxtail', 'demo-day', 'rideout', 'tread', 'aerobook', 'safetrace', 'unearth',
       'route-rabbit', 'leaf-hunter', 'caddaie', 'sos', 'big-score',
       'fowl-play', 'backyard-lab', 'pownow', 'co-trail-atlas', 'fart-flight', 'calisthenics', 'homecook', 'lookup', 'brew-log',
       'bruh',

@@ -288,20 +288,6 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-24',
   },
   {
-    name: 'MADE',
-    slug: 'made',
-    tagline: 'This showroom. One link to everything here.',
-    description:
-      'The front door to everything on this page: a static, installable showroom where every project is one entry in a catalog and every card is a tap away from the real thing.',
-    category: 'tools',
-    url: 'https://scottyfncodes.github.io/MADE/',
-    repo: 'https://github.com/scottyfncodes/MADE',
-    art: { icon: 'art/made.webp', accent: '#ff5c2e' },
-    tags: ['Showroom', 'PWA', 'Static'],
-    status: 'live',
-    dateAdded: '2026-09-28',
-  },
-  {
     name: 'Demo Day',
     slug: 'demo-day',
     tagline: 'Study the building, place your charges, get clear, watch it come down.',
