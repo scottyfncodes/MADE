@@ -17,7 +17,8 @@ describe('home view', () => {
   it('renders the brand, the featured project and a card for every project', () => {
     const view = viewFor({ kind: 'home', filter: 'all' })
     expect(view.querySelector('.intro__title')?.textContent).toContain('MADE')
-    expect(view.querySelector('.featured')).not.toBeNull()
+    const flagged = PROJECTS.find((p) => p.featured)
+    expect(view.querySelector('.featured')?.getAttribute('data-slug')).toBe(flagged?.slug)
     expect(view.querySelectorAll('.card')).toHaveLength(PROJECTS.length)
   })
 
