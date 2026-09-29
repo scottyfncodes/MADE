@@ -992,15 +992,15 @@
 .footer {
   padding: var(--space-8) 0 calc(var(--space-8) + var(--safe-bottom));
   border-top: 1px solid var(--line);
-  color: var(--text-faint);
+  color: var(--text-muted);
   font-size: 13px;
 }
 
 .footer__row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-4) var(--space-8);
   flex-wrap: wrap;
 }
 
@@ -1010,10 +1010,93 @@
   min-height: var(--tap);
   display: inline-flex;
   align-items: center;
+  border-radius: var(--radius-sm);
 }
 
 .footer a:hover {
   color: var(--text);
+}
+
+.footer__meta {
+  display: flex;
+  align-items: center;
+  gap: 0 var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Maker signature: "MADE by Have An App". The app leads; the studio signs. */
+
+.maker__lockup {
+  display: flex;
+  align-items: baseline;
+  gap: 0 10px;
+  flex-wrap: wrap;
+}
+
+.maker__app {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+}
+
+.maker__app .wordmark__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  margin-left: 4px;
+}
+
+.maker__by {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+/* Inline so the name shares the "by" baseline; padding widens the tap area. */
+.footer a.maker__studio {
+  display: inline;
+  color: var(--text);
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.footer a.maker__studio:hover {
+  color: var(--accent);
+}
+
+.maker__tile {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  vertical-align: -2px;
+}
+
+.maker__line {
+  margin-top: var(--space-2);
+}
+
+.footer a.maker__cta {
+  gap: 4px;
+  min-height: 0;
+  padding: 12px 0;
+  margin: -12px 0;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.footer a.maker__cta:hover {
+  text-decoration-color: currentColor;
+}
+
+.maker__cta .btn__icon {
+  width: 12px;
+  height: 12px;
 }
 
 /* ---------- Not found ---------- */

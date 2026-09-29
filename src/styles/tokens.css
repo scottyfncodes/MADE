@@ -1,4 +1,8 @@
-/* MADE design tokens — neutral foundation, one distinctive accent. */
+/* MADE design tokens — neutral foundation, one distinctive accent.
+ *
+ * Have An App family: everything here except the accent block is shared
+ * foundation (type stack, neutrals, radii, spacing, motion, safe areas).
+ * The accent is MADE's own personality. See brand/HAVE-AN-APP.md. */
 :root {
   color-scheme: light dark;
 
