@@ -135,20 +135,6 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-23',
   },
   {
-    name: 'Crew',
-    slug: 'crew',
-    tagline: 'A personal pilot operating system.',
-    description:
-      'Built around one loop: Schedule → Today → Flight → Logbook. Paste a pairing, see a context-aware Today screen, log landed legs in one tap and track rolling FAR 117 limits, plus reference data, calculators and layover guides.',
-    category: 'apps',
-    url: 'https://scottyfncodes.github.io/CREW/',
-    repo: 'https://github.com/scottyfncodes/CREW',
-    art: { icon: 'art/crew.webp', accent: '#3d8bff' },
-    tags: ['Aviation', 'Logbook', 'PWA', 'Offline'],
-    status: 'live',
-    dateAdded: '2026-09-24',
-  },
-  {
     name: 'Route Rabbit',
     slug: 'route-rabbit',
     tagline: 'A fast, private route planner for pediatric home-health therapists.',
@@ -161,19 +147,6 @@ export const PROJECTS: readonly Project[] = [
     tags: ['Route planning', 'Healthcare', 'Maps', 'Private'],
     status: 'live',
     dateAdded: '2026-09-24',
-  },
-  {
-    name: 'Antlerboard',
-    slug: 'antlerboard',
-    tagline: 'The Claw & Antler League’s front office.',
-    description:
-      'A fantasy-baseball league companion: keeper history and costs, trades, offers, DPUD bets, draft-color cycles and league history, with commissioner tools and Yahoo sync.',
-    category: 'apps',
-    repo: 'https://github.com/scottyfncodes/Antlerboard',
-    art: { icon: 'art/antlerboard.webp', accent: '#c9a15a' },
-    tags: ['Fantasy baseball', 'League tools'],
-    status: 'in-development',
-    dateAdded: '2026-09-23',
   },
   {
     name: 'Leaf Hunter',
