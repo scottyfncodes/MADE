@@ -163,19 +163,6 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-24',
   },
   {
-    name: 'Antlerboard',
-    slug: 'antlerboard',
-    tagline: 'The Claw & Antler League’s front office.',
-    description:
-      'A fantasy-baseball league companion: keeper history and costs, trades, offers, DPUD bets, draft-color cycles and league history, with commissioner tools and Yahoo sync.',
-    category: 'apps',
-    repo: 'https://github.com/scottyfncodes/Antlerboard',
-    art: { icon: 'art/antlerboard.webp', accent: '#c9a15a' },
-    tags: ['Fantasy baseball', 'League tools'],
-    status: 'in-development',
-    dateAdded: '2026-09-23',
-  },
-  {
     name: 'Leaf Hunter',
     slug: 'leaf-hunter',
     tagline: 'Find the color. Chase the peak.',
