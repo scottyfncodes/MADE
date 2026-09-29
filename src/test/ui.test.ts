@@ -136,9 +136,9 @@ describe('mount', () => {
     window.location.hash = '#/p/sos'
     window.dispatchEvent(new HashChangeEvent('hashchange'))
     expect(el.querySelector('main .detail__name')?.textContent).toBe('SOS')
-    window.location.hash = '#/tools'
+    window.location.hash = '#/outdoors'
     window.dispatchEvent(new HashChangeEvent('hashchange'))
-    expect(el.querySelector('main .chip[aria-current="true"]')?.getAttribute('data-filter')).toBe('tools')
+    expect(el.querySelector('main .chip[aria-current="true"]')?.getAttribute('data-filter')).toBe('outdoors')
     unmount()
   })
 })

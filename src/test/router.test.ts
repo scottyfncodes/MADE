@@ -7,7 +7,7 @@ describe('router', () => {
     expect(parseHash('#/')).toEqual({ kind: 'home', filter: 'all' })
     expect(parseHash('#/all')).toEqual({ kind: 'home', filter: 'all' })
     expect(parseHash('#/games')).toEqual({ kind: 'home', filter: 'games' })
-    expect(parseHash('#/tools/')).toEqual({ kind: 'home', filter: 'tools' })
+    expect(parseHash('#/outdoors/')).toEqual({ kind: 'home', filter: 'outdoors' })
   })
 
   it('parses project routes and decodes slugs', () => {
@@ -23,7 +23,7 @@ describe('router', () => {
   it('round-trips hrefs', () => {
     const routes = [
       { kind: 'home', filter: 'all' },
-      { kind: 'home', filter: 'apps' },
+      { kind: 'home', filter: 'commercial' },
       { kind: 'project', slug: 'sos' },
     ] as const
     for (const route of routes) expect(parseHash(hrefFor(route))).toEqual(route)

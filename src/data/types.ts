@@ -7,7 +7,7 @@
  */
 
 /** Category identifiers. Extend `CATEGORIES` in `categories.ts` to add more. */
-export type CategoryId = 'games' | 'apps' | 'tools' | 'experiments'
+export type CategoryId = 'games' | 'outdoors' | 'home' | 'commercial'
 
 export interface Category {
   id: CategoryId

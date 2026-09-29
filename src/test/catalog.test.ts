@@ -7,7 +7,7 @@ const make = (over: Partial<Project>): Project => ({
   slug: 'x',
   tagline: 't',
   description: 'd',
-  category: 'apps',
+  category: 'outdoors',
   art: { icon: 'art/x.webp', accent: '#000000' },
   tags: [],
   status: 'live',
@@ -18,8 +18,8 @@ const make = (over: Partial<Project>): Project => ({
 
 const fixture: Project[] = [
   make({ slug: 'a', name: 'A', category: 'games', dateAdded: '2026-01-03' }),
-  make({ slug: 'b', name: 'B', category: 'apps', dateAdded: '2026-01-02', featured: true }),
-  make({ slug: 'c', name: 'C', category: 'tools', dateAdded: '2026-01-04', status: 'coming-soon', url: undefined }),
+  make({ slug: 'b', name: 'B', category: 'outdoors', dateAdded: '2026-01-02', featured: true }),
+  make({ slug: 'c', name: 'C', category: 'home', dateAdded: '2026-01-04', status: 'coming-soon', url: undefined }),
   make({ slug: 'd', name: 'D', category: 'games', dateAdded: '2026-01-01' }),
 ]
 
@@ -41,11 +41,11 @@ describe('catalog selectors', () => {
   it('filters by category and keeps ordering', () => {
     expect(filterProjects('games', fixture).map((p) => p.slug)).toEqual(['a', 'd'])
     expect(filterProjects('all', fixture)).toHaveLength(4)
-    expect(filterProjects('experiments', fixture)).toHaveLength(0)
+    expect(filterProjects('commercial', fixture)).toHaveLength(0)
   })
 
   it('counts per category', () => {
-    expect(countByCategory(fixture)).toEqual({ all: 4, games: 2, apps: 1, tools: 1, experiments: 0 })
+    expect(countByCategory(fixture)).toEqual({ all: 4, games: 2, outdoors: 1, home: 1, commercial: 0 })
   })
 
   it('picks the featured live project, falling back to the first live one', () => {

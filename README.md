@@ -2,7 +2,7 @@
 
 **…by scott**
 
-MADE is a small, static showroom for my apps, games, tools and experiments. One link, tap something, use it.
+MADE is a small, static showroom for my games and apps: outdoors, home and commercial. One link, tap something, use it.
 
 Live: **https://scottyfncodes.github.io/MADE/**
 
@@ -19,7 +19,7 @@ Everything on the page is generated from one list: [`src/data/projects.ts`](src/
   slug: 'foxtail',                    // used in the URL: #/p/foxtail
   tagline: 'One line for the card.',
   description: 'A few sentences for the detail view.',
-  category: 'games',                  // games | apps | tools | experiments
+  category: 'games',                  // games | outdoors | home | commercial
   url: 'https://…',                   // ONLY when the link is confirmed to work
   repo: 'https://github.com/…',       // optional
   art: { icon: 'art/foxtail.webp', accent: '#2f7a5f' },
