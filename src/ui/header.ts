@@ -3,7 +3,7 @@ import { hrefFor } from '../lib/router'
 
 export function wordmark(tag: 'a' | 'div' = 'a'): HTMLElement {
   const mark = h('span', { class: 'wordmark__mark' }, 'MADE', h('span', { class: 'wordmark__dot', 'aria-hidden': 'true' }))
-  const tagline = h('span', { class: 'wordmark__tag' }, 'Things I’ve made.')
+  const tagline = h('span', { class: 'wordmark__tag' }, '…by scott')
   if (tag === 'a') {
     return h('a', { class: 'wordmark', href: hrefFor({ kind: 'home', filter: 'all' }), 'aria-label': 'MADE home' }, mark, tagline)
   }
