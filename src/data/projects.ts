@@ -135,20 +135,6 @@ export const PROJECTS: readonly Project[] = [
     dateAdded: '2026-09-23',
   },
   {
-    name: 'Crew',
-    slug: 'crew',
-    tagline: 'A personal pilot operating system.',
-    description:
-      'Built around one loop: Schedule → Today → Flight → Logbook. Paste a pairing, see a context-aware Today screen, log landed legs in one tap and track rolling FAR 117 limits, plus reference data, calculators and layover guides.',
-    category: 'apps',
-    url: 'https://scottyfncodes.github.io/CREW/',
-    repo: 'https://github.com/scottyfncodes/CREW',
-    art: { icon: 'art/crew.webp', accent: '#3d8bff' },
-    tags: ['Aviation', 'Logbook', 'PWA', 'Offline'],
-    status: 'live',
-    dateAdded: '2026-09-24',
-  },
-  {
     name: 'Route Rabbit',
     slug: 'route-rabbit',
     tagline: 'A fast, private route planner for pediatric home-health therapists.',
