@@ -4,13 +4,13 @@
  *   node scripts/build-art.mjs
  *
  * Inputs
- *   brand/made-mark.svg            MADE app icon (square, full-bleed)
- *   brand/made-mark-maskable.svg   MADE icon with maskable safe-zone padding
+ *   brand/mark.svg                 Have An App icon: the tile on a full-bleed tile
+ *   brand/mark-maskable.svg        The same icon with maskable safe-zone padding
  *   brand/og.svg                   Social preview
  *   art-src/<slug>.(svg|png)       Each project's own icon, copied from its repo
  *
  * Outputs (committed, served from public/)
- *   public/icons/*.png, public/og.png, public/art/<slug>.webp
+ *   public/icons/*.png, public/og.jpg, public/art/<slug>.webp
  */
 import { chromium } from 'playwright'
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises'
@@ -46,9 +46,9 @@ async function render(file, { width, height, type = 'png', quality }) {
   return page.screenshot(opts)
 }
 
-// --- MADE brand ---
-const mark = path.join(root, 'brand', 'made-mark.svg')
-const maskable = path.join(root, 'brand', 'made-mark-maskable.svg')
+// --- Have An App brand ---
+const mark = path.join(root, 'brand', 'mark.svg')
+const maskable = path.join(root, 'brand', 'mark-maskable.svg')
 for (const [name, size, file] of [
   ['icon-512.png', 512, mark],
   ['icon-192.png', 192, mark],

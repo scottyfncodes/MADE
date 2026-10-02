@@ -56,52 +56,40 @@
 
 .wordmark {
   display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
   min-height: var(--tap);
-  padding: 4px 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.03em;
   border-radius: var(--radius-sm);
 }
 
-.wordmark__mark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.04em;
-  line-height: 1;
+.tile {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+}
+
+.wordmark .tile {
+  width: 20px;
+  height: 20px;
+}
+
+.header__link {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-}
-
-.wordmark__dot {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 3px;
-  background: var(--accent);
-  transform: translateY(1px) rotate(45deg);
-  margin-left: 4px;
-}
-
-.wordmark__tag {
-  font-size: 14px;
+  min-height: var(--tap);
+  font-size: 15px;
+  font-weight: 600;
   color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-@media (max-width: 379px) {
-  .wordmark__tag {
-    display: none;
-  }
-}
-
-.header__count {
-  font-size: 13px;
-  color: var(--text-faint);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+.header__link:hover {
+  color: var(--text);
 }
 
 /* ---------- Category nav ---------- */
@@ -211,40 +199,42 @@
   }
 }
 
-/* ---------- Intro ---------- */
+/* ---------- Hero ---------- */
 
-.intro {
-  padding-top: var(--space-8);
+.hero {
+  padding-top: clamp(48px, 11vw, 120px);
+  padding-bottom: clamp(32px, 6vw, 72px);
 }
 
-.intro__title {
+.hero__title {
+  max-width: 14ch;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(40px, 12vw, 88px);
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  font-size: clamp(40px, 9vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
-.intro__title .wordmark__dot {
-  width: 0.18em;
-  height: 0.18em;
-  border-radius: 0.05em;
-  margin-left: 0.08em;
-  transform: translateY(-0.02em) rotate(45deg);
-}
-
-.intro__sub {
-  margin-top: var(--space-3);
-  font-size: clamp(17px, 2.4vw, 22px);
+.hero__answer {
+  display: block;
+  margin-top: 0.12em;
   color: var(--text-muted);
-  letter-spacing: -0.01em;
-  max-width: 34ch;
 }
 
-@media (min-width: 640px) {
-  .intro {
-    padding-top: var(--space-12);
-  }
+.hero__sub {
+  max-width: 34rem;
+  margin-top: var(--space-6);
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
 }
 
 /* ---------- Buttons ---------- */
@@ -273,7 +263,8 @@
 .btn--primary {
   background: var(--project-accent, var(--accent));
   color: var(--project-ink, var(--accent-ink));
-  box-shadow: 0 8px 24px -12px var(--project-accent, var(--accent));
+  /* The studio itself is ink on paper, so only an app's own accent casts a glow. */
+  box-shadow: 0 8px 24px -12px var(--project-accent, transparent);
 }
 
 .btn--primary:hover {
@@ -300,6 +291,13 @@
   padding: 0 28px;
   font-size: 17px;
   width: 100%;
+}
+
+/* Primary-size pill that keeps its natural width (hero, hello). */
+.btn--xl {
+  min-height: 52px;
+  padding: 0 26px;
+  font-size: 16px;
 }
 
 .btn--here {
@@ -987,6 +985,113 @@
   }
 }
 
+/* ---------- The next seat in the family ---------- */
+
+.card--next {
+  background: transparent;
+  border: 1.5px dashed var(--line-strong);
+  box-shadow: none;
+}
+
+@media (hover: hover) {
+  .card--next:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.card__next-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 24%;
+  border: 1.5px dashed var(--line-strong);
+  color: var(--text-muted);
+}
+
+.card__next-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* ---------- How it goes ---------- */
+
+.steps {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--chip-bg);
+}
+
+.step__n {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line-strong);
+  font-weight: 700;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.step__title {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.step p {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: 15px;
+  text-wrap: pretty;
+}
+
+/* ---------- Got one? ---------- */
+
+.hello {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  text-align: center;
+}
+
+.hello__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 56px);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.hello__sub {
+  margin: var(--space-3) auto var(--space-8);
+  max-width: 28rem;
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.hello .btn {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 /* ---------- Footer ---------- */
 
 .footer {
@@ -998,7 +1103,7 @@
 
 .footer__row {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-4) var(--space-8);
   flex-wrap: wrap;
@@ -1024,79 +1129,21 @@
   flex-wrap: wrap;
 }
 
-/* Maker signature: "MADE by Have An App". The app leads; the studio signs. */
-
-.maker__lockup {
+.footer__sig {
   display: flex;
-  align-items: baseline;
-  gap: 0 10px;
-  flex-wrap: wrap;
-}
-
-.maker__app {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--text);
-  display: inline-flex;
   align-items: center;
+  gap: 8px;
 }
 
-.maker__app .wordmark__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  margin-left: 4px;
+.footer__sig .tile {
+  width: 16px;
+  height: 16px;
+  color: var(--text);
 }
 
-.maker__by {
-  font-size: 14px;
-  letter-spacing: -0.01em;
-}
-
-/* Inline so the name shares the "by" baseline; padding widens the tap area. */
-.footer a.maker__studio {
-  display: inline;
+.footer__sig strong {
   color: var(--text);
   font-weight: 600;
-  padding: 12px 0;
-}
-
-.footer a.maker__studio:hover {
-  color: var(--accent);
-}
-
-.maker__tile {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 5px;
-  vertical-align: -2px;
-}
-
-.maker__line {
-  margin-top: var(--space-2);
-}
-
-.footer a.maker__cta {
-  gap: 4px;
-  min-height: 0;
-  padding: 12px 0;
-  margin: -12px 0;
-  text-decoration: underline;
-  text-decoration-color: var(--line-strong);
-  text-underline-offset: 3px;
-}
-
-.footer a.maker__cta:hover {
-  text-decoration-color: currentColor;
-}
-
-.maker__cta .btn__icon {
-  width: 12px;
-  height: 12px;
 }
 
 /* ---------- Not found ---------- */

@@ -1,31 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#17171b"/>
+      <stop offset="0" stop-color="#18181c"/>
       <stop offset="1" stop-color="#0b0b0d"/>
     </linearGradient>
-    <linearGradient id="dot" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff7a4d"/>
-      <stop offset="1" stop-color="#ff4a1a"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.9" cy="0.1" r="0.7">
-      <stop offset="0" stop-color="#ff5c2e" stop-opacity="0.26"/>
-      <stop offset="1" stop-color="#ff5c2e" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="tile"><rect x="110" y="155" width="320" height="320" rx="72"/></clipPath>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <!-- app tile -->
-  <g clip-path="url(#tile)">
-    <rect x="110" y="155" width="320" height="320" fill="#141417"/>
-    <g transform="translate(110 155) scale(0.625)">
-      <path d="M104 392V128h60l92 130 92-130h60v264h-58V230l-94 130-94-130v162z" fill="#f4f4f5"/>
-      <rect x="340" y="322" width="70" height="70" rx="14" transform="rotate(45 375 357)" fill="url(#dot)"/>
-    </g>
+  <g transform="translate(96 150)">
+    <rect x="6" y="6" width="84" height="84" rx="28" fill="none" stroke="#f4f4f5" stroke-width="12"/>
+    <circle cx="48" cy="48" r="13" fill="#f4f4f5"/>
   </g>
-  <rect x="110" y="155" width="320" height="320" rx="72" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
-  <text x="500" y="300" font-family="-apple-system, 'SF Pro Display', 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="136" font-weight="800" letter-spacing="-7" fill="#f4f4f5">MADE</text>
-  <text x="506" y="372" font-family="-apple-system, 'SF Pro Text', 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="46" font-weight="500" letter-spacing="-1" fill="#c4c4cc">…by scott</text>
-  <text x="506" y="432" font-family="-apple-system, 'SF Pro Text', 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="27" fill="#8a8a93">Games, apps, tools and experiments. Tap one to open it.</text>
+  <text x="96" y="350" fill="#f4f4f5" font-family="-apple-system, 'SF Pro Display', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-4">Have An App</text>
+  <text x="96" y="430" fill="#a1a1aa" font-family="-apple-system, 'SF Pro Text', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-0.5">Small apps, made for you.</text>
 </svg>

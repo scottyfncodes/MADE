@@ -1,10 +1,10 @@
-# MADE
+# Have An App
 
-**…by scott**
+**Small apps, made for you.**
 
-MADE is a small, static showroom for my games and apps: outdoors, home and commercial. One link, tap something, use it.
+The website for Have An App, a tiny studio that makes small, useful apps, and the showroom for every app in the family: games, and apps for the outdoors, home and work. One link, tap something, use it.
 
-Live: **https://scottyfncodes.github.io/MADE/**
+It will live at **https://haveanapp.com**. Until the domain moves over, it's at https://scottyfncodes.github.io/MADE/. The build uses relative paths, so it works at either.
 
 ## Adding a project
 
@@ -44,14 +44,14 @@ Add the id to `CategoryId` in `src/data/types.ts` and an entry to `CATEGORIES` i
 npm install
 npm run dev        # local dev server
 npm run check      # typecheck + tests + production build
-npm run art        # re-render brand icons and project artwork (uses the bundled Chromium)
+npm run art        # re-render the studio icons, social image and project artwork (uses the bundled Chromium)
 ```
 
 Deploys happen from `main` through `.github/workflows/deploy.yml` to GitHub Pages.
 
 ## Brand
 
-MADE is made by [Have An App](https://haveanapp.com). The studio signs the footer and nowhere else. [`brand/HAVE-AN-APP.md`](brand/HAVE-AN-APP.md) records the conventions this sets for future Have An App projects.
+[`BRAND.md`](BRAND.md) is the Have An App brand system: what every app in the family shares, and what each one keeps for itself. The studio is ink on paper; the color on the page comes from the apps.
 
 ## Stack
 

@@ -1,9 +1,9 @@
 /*
- * MADE service worker: keeps the showroom usable offline once visited.
+ * Have An App service worker: keeps the site usable offline once visited.
  * Navigations are network-first (so deploys show up immediately) with the
  * cached shell as a fallback; hashed assets and artwork are cache-first.
  */
-const VERSION = 'made-v1'
+const VERSION = 'haveanapp-v1'
 const SHELL = ['./', './manifest.webmanifest']
 
 self.addEventListener('install', (event) => {

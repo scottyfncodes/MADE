@@ -58,7 +58,7 @@ export function projectDetail(project: Project, backTo: string): HTMLElement {
   const view = h(
     'section',
     { class: 'container detail', style: projectStyle(project) },
-    h('a', { class: 'detail__back', href: backTo }, svg(GLYPH_CHEVRON_LEFT, 'btn__icon'), 'All things'),
+    h('a', { class: 'detail__back', href: backTo }, svg(GLYPH_CHEVRON_LEFT, 'btn__icon'), 'The family'),
     hero,
     body,
   )
@@ -80,8 +80,8 @@ export function notFound(): HTMLElement {
       'section',
       { class: 'container notfound' },
       h('h1', null, 'Nothing here.'),
-      h('p', null, 'That project does not exist, or it moved.'),
-      h('a', { class: 'btn btn--primary', href: hrefFor({ kind: 'home', filter: 'all' }) }, 'Back to everything'),
+      h('p', null, 'That app doesn’t exist, or it moved.'),
+      h('a', { class: 'btn btn--primary', href: hrefFor({ kind: 'home', filter: 'all' }) }, 'Back to the family'),
     ),
   )
 }

@@ -1,5 +1,5 @@
 /**
- * Visual QA: serves dist/ under /MADE/ and screenshots key views at
+ * Visual QA: serves dist/ under a sub-path (proving the relative build) and screenshots key views at
  * phone, tablet and desktop sizes. Fails if the page logs console errors.
  *
  *   node scripts/qa-screenshots.mjs [outDir]
@@ -17,8 +17,8 @@ await mkdir(outDir, { recursive: true })
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json' }
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost')
-  if (!url.pathname.startsWith('/MADE/')) { res.writeHead(404); return res.end() }
-  let file = path.join(dist, url.pathname.slice('/MADE/'.length) || 'index.html')
+  if (!url.pathname.startsWith('/haveanapp/')) { res.writeHead(404); return res.end() }
+  let file = path.join(dist, url.pathname.slice('/haveanapp/'.length) || 'index.html')
   try { if ((await stat(file)).isDirectory()) file = path.join(file, 'index.html') } catch { res.writeHead(404); return res.end('nope') }
   try {
     const body = await readFile(file)
@@ -27,7 +27,7 @@ const server = createServer(async (req, res) => {
   } catch { res.writeHead(404); res.end('nope') }
 })
 await new Promise((r) => server.listen(0, r))
-const base = `http://localhost:${server.address().port}/MADE/`
+const base = `http://localhost:${server.address().port}/haveanapp/`
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium' })
 const errors = []

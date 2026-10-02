@@ -1,5 +1,5 @@
 {
-  "name": "made",
+  "name": "haveanapp",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -21,5 +21,5 @@
     "vite": "^8.3.0",
     "vitest": "^5.0.2"
   },
-  "description": "MADE \u2014 a showroom of things I\u2019ve made."
+  "description": "Have An App \u2014 small apps, made for you."
 }

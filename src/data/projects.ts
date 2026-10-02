@@ -1,7 +1,7 @@
 import type { Project } from './types'
 
 /**
- * The MADE catalog. This is the only file that changes when a project is
+ * The Have An App family. This is the only file that changes when a project is
  * added, updated or retired.
  *
  * Rules of the showroom:
@@ -9,7 +9,7 @@ import type { Project } from './types'
  *    no confirmed public URL, leave `url` out and give it an honest status.
  *  - `art.icon` points at a file under `public/`. Project artwork is rendered
  *    from each project's own icon by `scripts/build-art.mjs`.
- *  - `art.accent` is the project's own color; MADE only frames it.
+ *  - `art.accent` is the project's own color; the studio only frames it.
  */
 export const PROJECTS: readonly Project[] = [
   {

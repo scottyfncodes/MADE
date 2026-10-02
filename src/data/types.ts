@@ -1,5 +1,5 @@
 /**
- * Core data model for the MADE showroom.
+ * Core data model for the Have An App family.
  *
  * Everything the UI renders is derived from `Project` entries. Adding a
  * project means adding one entry to `src/data/projects.ts`; nothing else
@@ -37,7 +37,7 @@ export interface ProjectArt {
   /** Optional gallery of screenshots for the detail view. */
   screenshots?: string[]
   /**
-   * Accent color for this project. MADE is the frame; each project keeps its
+   * Accent color for this project. The studio is ink on paper; each app keeps its
    * own identity through this color (glow, gradient wash, focus ring).
    */
   accent: string

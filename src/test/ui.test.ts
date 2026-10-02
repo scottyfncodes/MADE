@@ -14,12 +14,40 @@ function root(): HTMLElement {
 describe('home view', () => {
   beforeEach(root)
 
-  it('renders the brand, the featured project and a card for every project', () => {
+  it('renders the studio hero, the featured project and a card for every project', () => {
     const view = viewFor({ kind: 'home', filter: 'all' })
-    expect(view.querySelector('.intro__title')?.textContent).toContain('MADE')
+    expect(view.querySelector('.hero__title')?.textContent).toBe('Have an idea for an\u00a0app? Cool. Let’s make\u00a0it.')
     const flagged = PROJECTS.find((p) => p.featured)
     expect(view.querySelector('.featured')?.getAttribute('data-slug')).toBe(flagged?.slug)
-    expect(view.querySelectorAll('.card')).toHaveLength(PROJECTS.length)
+    expect(view.querySelectorAll('.card[data-slug]')).toHaveLength(PROJECTS.length)
+    expect(view.querySelector('#grid-title')?.textContent).toBe('The family')
+  })
+
+  it('saves the last seat for the next idea, only on the full family', () => {
+    const all = viewFor({ kind: 'home', filter: 'all' })
+    const cards = all.querySelectorAll('.grid > .card')
+    expect(cards[cards.length - 1]?.classList.contains('card--next')).toBe(true)
+    expect(all.querySelector('.card--next a')).toBeNull()
+    expect(viewFor({ kind: 'home', filter: 'games' }).querySelector('.card--next')).toBeNull()
+  })
+
+  it('invites ideas by email and explains how it goes', () => {
+    const view = viewFor({ kind: 'home', filter: 'all' })
+    const mailtos = [...view.querySelectorAll<HTMLAnchorElement>('a[href^="mailto:"]')]
+    expect(mailtos.length).toBeGreaterThanOrEqual(1)
+    for (const a of mailtos) expect(a.getAttribute('href')).toMatch(/^mailto:hello@haveanapp\.com\?subject=/)
+    expect(view.querySelectorAll('.steps .step')).toHaveLength(3)
+    expect(view.querySelector('#hello-title')?.textContent).toBe('Got one?')
+  })
+
+  it('never says the words the brand rules out', () => {
+    const el = root()
+    const unmount = mount(el)
+    const text = el.textContent?.toLowerCase() ?? ''
+    for (const word of ['solutions', 'platform', 'enterprise', 'innovation', 'transformation', 'end-to-end', 'scalable', 'synergy']) {
+      expect(text, word).not.toContain(word)
+    }
+    unmount()
   })
 
   it('renders All plus one chip per non-empty category, in registry order', () => {
@@ -43,7 +71,7 @@ describe('home view', () => {
   it('filters cards by category and hides the featured block', () => {
     const view = viewFor({ kind: 'home', filter: 'games' })
     const expected = PROJECTS.filter((p) => p.category === 'games').length
-    expect(view.querySelectorAll('.card')).toHaveLength(expected)
+    expect(view.querySelectorAll('.card[data-slug]')).toHaveLength(expected)
     expect(view.querySelector('.featured')).toBeNull()
     expect(view.querySelector('.chip[aria-current="true"]')?.getAttribute('data-filter')).toBe('games')
   })
@@ -131,8 +159,8 @@ describe('detail view', () => {
   })
 
   it('sets page titles', () => {
-    expect(titleFor({ kind: 'home', filter: 'all' })).toContain('MADE')
-    expect(titleFor({ kind: 'project', slug: 'sos' })).toBe('SOS — MADE')
+    expect(titleFor({ kind: 'home', filter: 'all' })).toBe('Have An App — small apps, made for you')
+    expect(titleFor({ kind: 'project', slug: 'sos' })).toBe('SOS — Have An App')
   })
 })
 
@@ -151,19 +179,19 @@ describe('mount', () => {
     unmount()
   })
 
-  it('signs the footer "MADE by Have An App" with a real link to the studio', () => {
+  it('leads with the studio wordmark and signs the footer, with no app accent of its own', () => {
     const el = root()
     const unmount = mount(el)
+    const mark = el.querySelector('header .wordmark') as HTMLElement
+    expect(mark.textContent).toBe('Have An App')
+    expect(mark.querySelector('svg.tile')).not.toBeNull()
+    expect(el.querySelector('header')?.textContent).not.toContain('MADE')
     const footer = el.querySelector('footer') as HTMLElement
-    expect(footer.querySelector('.maker__lockup')?.textContent).toBe('MADEby Have An App')
-    const links = [...footer.querySelectorAll<HTMLAnchorElement>('a[href="https://haveanapp.com"]')]
-    expect(links.length).toBeGreaterThanOrEqual(1)
-    for (const a of links) {
-      expect(a.getAttribute('target')).toBe('_blank')
+    expect(footer.querySelector('.footer__sig')?.textContent).toBe('Have An App — small apps, made for you.')
+    expect(footer.textContent).not.toContain('MADE')
+    for (const a of footer.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]')) {
       expect(a.getAttribute('rel')).toContain('noopener')
     }
-    // The studio stays out of the header: MADE is the app.
-    expect(el.querySelector('header')?.textContent).not.toContain('Have An App')
     unmount()
   })
 })

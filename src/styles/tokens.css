@@ -1,18 +1,18 @@
-/* MADE design tokens — neutral foundation, one distinctive accent.
+/* Have An App design tokens — the family foundation.
  *
- * Have An App family: everything here except the accent block is shared
- * foundation (type stack, neutrals, radii, spacing, motion, safe areas).
- * The accent is MADE's own personality. See brand/HAVE-AN-APP.md. */
+ * Every app in the family copies this block (type stack, neutrals, radii,
+ * spacing, motion, safe areas) and adds one accent of its own. The studio
+ * has no accent: it's ink on paper. See BRAND.md. */
 :root {
   color-scheme: light dark;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* Accent: MADE tangerine. Used for the wordmark dot, focus rings, primary actions. */
-  --accent: #ff5c2e;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(255, 92, 46, 0.14);
+  /* The studio's "accent" is just inverted ink: focus rings, skip link, studio buttons.
+   * An app's own color arrives per element as --project-accent. */
+  --accent: #f4f4f5;
+  --accent-ink: #0d0d0f;
 
   /* Neutral scale (dark theme by default; light overrides below). */
   --bg: #0d0d0f;
@@ -80,7 +80,8 @@
     --chip-active-bg: #111113;
     --chip-active-ink: #ffffff;
     --glass: rgba(246, 246, 244, 0.78);
-    --accent-soft: rgba(255, 92, 46, 0.12);
+    --accent: #111113;
+    --accent-ink: #ffffff;
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -20px rgba(0, 0, 0, 0.25);
     --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.05), 0 24px 48px -24px rgba(0, 0, 0, 0.3);
     --shadow-icon: 0 8px 20px -10px rgba(0, 0, 0, 0.35);

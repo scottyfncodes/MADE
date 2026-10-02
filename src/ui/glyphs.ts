@@ -10,5 +10,7 @@ export const GLYPH_GITHUB = `<svg viewBox="0 0 16 16" fill="currentColor" aria-h
 
 export const GLYPH_CLOCK = `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.8V8l2.2 1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`
 
-/** Have An App's mark: a single app tile. Monochrome, so it never competes with the app it signs. */
+/** Have An App's mark: an app tile with a dot, waiting for an idea. Monochrome, so it never competes with an app's accent. */
 export const GLYPH_TILE = `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="8" r="1.8" fill="currentColor"/></svg>`
+
+export const GLYPH_PLUS = `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 4.5v7M4.5 8h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`

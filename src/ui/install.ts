@@ -5,7 +5,7 @@ import { h } from '../lib/dom'
 /**
  * How to put a project on the Home Screen so it opens full-screen with its own
  * icon. Only shown for projects with a live link: the steps happen on the
- * project's own page, not on MADE.
+ * project's own page, not here.
  */
 export function installGuide(project: Project): HTMLElement {
   const action = getCategory(project.category).action
